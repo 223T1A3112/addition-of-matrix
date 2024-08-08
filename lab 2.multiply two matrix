@@ -1,0 +1,185 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNfy+EgZeIHI3JM1fwoy61M",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/223T1A3112/addition-of-matrix/blob/main/lab%202.multiply%20two%20matrix\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "iIBPKSMFi5y-",
+        "outputId": "32d9d7d4-3dd2-4323-9522-a69c15095b92"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Epoch 1/10\n"
+          ]
+        },
+        {
+          "output_type": "stream",
+          "name": "stderr",
+          "text": [
+            "/usr/local/lib/python3.10/dist-packages/keras/src/layers/reshaping/flatten.py:37: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.\n",
+            "  super().__init__(**kwargs)\n"
+          ]
+        },
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\u001b[1m250/250\u001b[0m \u001b[32m━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[37m\u001b[0m \u001b[1m3s\u001b[0m 4ms/step - loss: 0.5980 - val_loss: 0.1489\n",
+            "Epoch 2/10\n",
+            "\u001b[1m250/250\u001b[0m \u001b[32m━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[37m\u001b[0m \u001b[1m1s\u001b[0m 2ms/step - loss: 0.1397 - val_loss: 0.1166\n",
+            "Epoch 3/10\n",
+            "\u001b[1m250/250\u001b[0m \u001b[32m━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[37m\u001b[0m \u001b[1m1s\u001b[0m 2ms/step - loss: 0.1050 - val_loss: 0.0853\n",
+            "Epoch 4/10\n",
+            "\u001b[1m250/250\u001b[0m \u001b[32m━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[37m\u001b[0m \u001b[1m1s\u001b[0m 2ms/step - loss: 0.0785 - val_loss: 0.0654\n",
+            "Epoch 5/10\n",
+            "\u001b[1m250/250\u001b[0m \u001b[32m━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[37m\u001b[0m \u001b[1m1s\u001b[0m 2ms/step - loss: 0.0611 - val_loss: 0.0537\n",
+            "Epoch 6/10\n",
+            "\u001b[1m250/250\u001b[0m \u001b[32m━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[37m\u001b[0m \u001b[1m1s\u001b[0m 2ms/step - loss: 0.0517 - val_loss: 0.0457\n",
+            "Epoch 7/10\n",
+            "\u001b[1m250/250\u001b[0m \u001b[32m━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[37m\u001b[0m \u001b[1m0s\u001b[0m 2ms/step - loss: 0.0441 - val_loss: 0.0392\n",
+            "Epoch 8/10\n",
+            "\u001b[1m250/250\u001b[0m \u001b[32m━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[37m\u001b[0m \u001b[1m1s\u001b[0m 2ms/step - loss: 0.0376 - val_loss: 0.0334\n",
+            "Epoch 9/10\n",
+            "\u001b[1m250/250\u001b[0m \u001b[32m━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[37m\u001b[0m \u001b[1m1s\u001b[0m 2ms/step - loss: 0.0319 - val_loss: 0.0288\n",
+            "Epoch 10/10\n",
+            "\u001b[1m250/250\u001b[0m \u001b[32m━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[37m\u001b[0m \u001b[1m0s\u001b[0m 2ms/step - loss: 0.0275 - val_loss: 0.0258\n",
+            "\u001b[1m32/32\u001b[0m \u001b[32m━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[37m\u001b[0m \u001b[1m0s\u001b[0m 1ms/step - loss: 0.0263 \n",
+            "Test loss: 0.026243198662996292\n",
+            "\u001b[1m32/32\u001b[0m \u001b[32m━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[37m\u001b[0m \u001b[1m0s\u001b[0m 3ms/step\n",
+            "Predictions vs Actuals:\n",
+            "Prediction:\n",
+            "[[0.5488756  0.29772508 1.1598166 ]\n",
+            " [0.8725022  0.7094806  1.4928386 ]\n",
+            " [0.34117916 0.16774443 1.0257481 ]]\n",
+            "Actual:\n",
+            "[[0.51517723 0.37890699 0.97627431]\n",
+            " [0.82877966 0.61033406 1.74114101]\n",
+            " [0.32012073 0.25784068 0.71663731]]\n",
+            "\n",
+            "Prediction:\n",
+            "[[ 0.43301958  1.3212852   0.9845098 ]\n",
+            " [-0.1028289   0.6802828   0.426172  ]\n",
+            " [ 0.23405606  0.998953    0.7759272 ]]\n",
+            "Actual:\n",
+            "[[0.43447215 1.21766484 0.85060795]\n",
+            " [0.04978819 0.49044355 0.442885  ]\n",
+            " [0.13410432 1.07758158 0.90043319]]\n",
+            "\n",
+            "Prediction:\n",
+            "[[0.12829778 0.03298897 0.6351186 ]\n",
+            " [0.6257562  0.36575913 1.1531166 ]\n",
+            " [0.7210854  0.50987816 1.281644  ]]\n",
+            "Actual:\n",
+            "[[0.06500883 0.04854929 0.13669464]\n",
+            " [0.57232173 0.36870517 1.10970046]\n",
+            " [0.65020705 0.54848511 1.32034643]]\n",
+            "\n",
+            "Prediction:\n",
+            "[[0.88738775 0.77238965 0.9779819 ]\n",
+            " [0.73910093 0.6475851  0.81816363]\n",
+            " [0.7816956  0.6612172  0.89137983]]\n",
+            "Actual:\n",
+            "[[1.08209859 0.76329784 1.16022097]\n",
+            " [0.92378988 0.44076395 0.93182151]\n",
+            " [0.85971667 0.81918962 0.9686112 ]]\n",
+            "\n",
+            "Prediction:\n",
+            "[[0.5477289  0.88858676 0.48323256]\n",
+            " [0.9251562  1.2108647  0.81230843]\n",
+            " [1.0859052  1.3584014  0.96660054]]\n",
+            "Actual:\n",
+            "[[0.59913652 0.96921629 0.53225093]\n",
+            " [0.92686179 1.40269108 0.88016856]\n",
+            " [0.98875753 1.49196869 0.75674522]]\n",
+            "\n"
+          ]
+        }
+      ],
+      "source": [
+        "import numpy as np\n",
+        "from tensorflow.keras.models import Sequential\n",
+        "from tensorflow.keras.layers import Dense, Flatten, Reshape\n",
+        "\n",
+        "\n",
+        "def generate_data(num_samples, matrix_size):\n",
+        "    X1 = np.random.rand(num_samples, matrix_size, matrix_size)\n",
+        "    X2 = np.random.rand(num_samples, matrix_size, matrix_size)\n",
+        "    Y = np.matmul(X1, X2)\n",
+        "    return (X1, X2), Y\n",
+        "\n",
+        "\n",
+        "def build_model(matrix_size):\n",
+        "    model = Sequential()\n",
+        "    model.add(Flatten(input_shape=(matrix_size, matrix_size, 2)))\n",
+        "    model.add(Dense(matrix_size * matrix_size, activation='relu'))\n",
+        "    model.add(Dense(matrix_size * matrix_size))\n",
+        "    model.add(Reshape((matrix_size, matrix_size)))\n",
+        "    model.compile(optimizer='adam', loss='mse')\n",
+        "    return model\n",
+        "\n",
+        "\n",
+        "matrix_size = 3\n",
+        "num_samples = 10000\n",
+        "\n",
+        "(X1, X2), Y = generate_data(num_samples, matrix_size)\n",
+        "\n",
+        "\n",
+        "X = np.stack((X1, X2), axis=-1)\n",
+        "\n",
+        "\n",
+        "model = build_model(matrix_size)\n",
+        "model.fit(X, Y, epochs=10, batch_size=32, validation_split=0.2)\n",
+        "\n",
+        "\n",
+        "(X_test1, X_test2), Y_test = generate_data(1000, matrix_size)\n",
+        "X_test = np.stack((X_test1, X_test2), axis=-1)\n",
+        "loss = model.evaluate(X_test, Y_test)\n",
+        "print(f\"Test loss: {loss}\")\n",
+        "\n",
+        "\n",
+        "predictions = model.predict(X_test)\n",
+        "\n",
+        "\n",
+        "print(\"Predictions vs Actuals:\")\n",
+        "for i in range(5):\n",
+        "    print(\"Prediction:\")\n",
+        "    print(predictions[i])\n",
+        "    print(\"Actual:\")\n",
+        "    print(Y_test[i])\n",
+        "    print()\n"
+      ]
+    }
+  ]
+}
